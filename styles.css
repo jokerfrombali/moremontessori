@@ -424,6 +424,26 @@ h3 {
   overflow: hidden;
 }
 
+.program-card.program-age {
+  min-height: 250px;
+  padding: 28px;
+}
+
+.program-card.program-age small {
+  display: inline-flex;
+  margin-bottom: 28px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(216, 182, 111, 0.22);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.program-card.program-age h3 {
+  margin-bottom: 16px;
+}
+
 .program-card img {
   aspect-ratio: 1.36 / 1;
   object-fit: cover;
