@@ -1,4 +1,4 @@
-const leadForm = document.querySelector(".lead-form");
+const leadForms = document.querySelectorAll(".lead-form, .inline-lead-form");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 
@@ -24,7 +24,7 @@ if (menuToggle && mobileMenu) {
   });
 }
 
-if (leadForm) {
+leadForms.forEach((leadForm) => {
   leadForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -44,7 +44,7 @@ if (leadForm) {
 
     window.location.href = `https://wa.me/79628882450?text=${encodeURIComponent(message)}`;
   });
-}
+});
 
 const spaceSlider = document.querySelector(".space-slider");
 
