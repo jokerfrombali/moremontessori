@@ -8,6 +8,8 @@
       content="Море Монтессори приглашает на уютный пикник и завтрак у моря с детками 30 апреля в 11:00 на пляже Ривьера."
     />
     <title>Пикник у моря - Море Монтессори Сочи</title>
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <link rel="apple-touch-icon" href="assets/logo.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="news-page">
@@ -32,7 +34,32 @@
         <a href="https://www.instagram.com/moremontessori_sochi" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
       </div>
       <a class="header-phone" href="tel:+79628882450">+7 962 888-24-50</a>
+      <a class="mobile-header-phone" href="tel:+79628882450" aria-label="Позвонить">☎</a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav aria-label="Мобильная навигация">
+        <a href="index.html#programs">Форматы</a>
+        <a href="index.html#space">Среда</a>
+        <a href="index.html#schedule">График</a>
+        <a href="index.html#news">Новости</a>
+        <a href="index.html#contacts">Контакты</a>
+      </nav>
+      <div class="mobile-menu-contacts">
+        <a href="tel:+79628882450">+7 (962) 888-24-50</a>
+        <span>Пн-пт 08:00-18:00</span>
+        <span>Сочи, Пластунская ул., 123А, корп. 3</span>
+      </div>
+      <div class="socials mobile-menu-socials" aria-label="Социальные сети">
+        <a href="https://vk.ru/cadmontessori" aria-label="ВКонтакте" target="_blank" rel="noopener">VK</a>
+        <a href="https://t.me/moremontessorisochi" aria-label="Telegram" target="_blank" rel="noopener">TG</a>
+        <a href="https://www.instagram.com/moremontessori_sochi" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+      </div>
+    </div>
 
     <main>
       <article class="article-hero section">
@@ -89,11 +116,9 @@
       </section>
     </main>
 
-    <a class="mobile-call" href="tel:+79628882450">Позвонить в садик</a>
-
     <footer class="footer">
       <span>© Море Монтессори, Сочи</span>
-      <span class="footer-hours">Пн-пт 08:00-19:00</span>
+      <span class="footer-hours">Пн-пт 08:00-18:00</span>
       <div class="socials footer-socials" aria-label="Социальные сети">
         <a href="https://vk.ru/cadmontessori" aria-label="ВКонтакте" target="_blank" rel="noopener">VK</a>
         <a href="https://t.me/moremontessorisochi" aria-label="Telegram" target="_blank" rel="noopener">TG</a>
@@ -101,5 +126,6 @@
       </div>
       <a href="tel:+79628882450">+7 (962) 888-24-50</a>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
