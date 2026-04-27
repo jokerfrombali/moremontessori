@@ -966,6 +966,29 @@ h3 {
   width: 100%;
 }
 
+.success-page {
+  display: grid;
+  min-height: 100svh;
+  align-content: center;
+  justify-items: start;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(216, 182, 111, 0.3), transparent 32%),
+    var(--paper);
+}
+
+.success-logo {
+  width: 92px;
+  height: 92px;
+  margin-bottom: 28px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.success-page h1 {
+  max-width: 760px;
+  color: var(--ink);
+}
+
 .hours {
   display: grid;
   gap: 8px;
@@ -1030,6 +1053,10 @@ h3 {
   display: grid;
   gap: 16px;
   padding: 28px;
+}
+
+.hidden-field {
+  display: none;
 }
 
 .lead-form label {

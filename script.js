@@ -1,4 +1,3 @@
-const leadForms = document.querySelectorAll(".lead-form, .inline-lead-form");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 
@@ -23,28 +22,6 @@ if (menuToggle && mobileMenu) {
     }
   });
 }
-
-leadForms.forEach((leadForm) => {
-  leadForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const data = new FormData(leadForm);
-    const name = String(data.get("name") || "").trim();
-    const phone = String(data.get("phone") || "").trim();
-    const age = String(data.get("age") || "").trim();
-
-    const message = [
-      "Здравствуйте! Хочу записаться на знакомство в садик Море Монтессори.",
-      name ? `Имя: ${name}` : "",
-      phone ? `Телефон: ${phone}` : "",
-      age ? `Возраст ребенка: ${age}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    window.location.href = `https://wa.me/79628882450?text=${encodeURIComponent(message)}`;
-  });
-});
 
 const spaceSlider = document.querySelector(".space-slider");
 
