@@ -3,24 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заявка отправлена - Море Монтессори</title>
+    <title>Заявка отправлена — Море Монтессори</title>
     <link rel="icon" type="image/png" href="assets/logo.png" />
-    <link rel="apple-touch-icon" href="assets/logo.png" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .success-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+      }
+      .success-page h1 { margin-bottom: 1rem; }
+      .success-page p { color: #555; margin-bottom: 2rem; }
+    </style>
   </head>
-  <body class="news-page">
-    <main class="success-page section">
-      <img class="success-logo" src="assets/logo.png" alt="" />
-      <p class="eyebrow">Заявка отправлена</p>
-      <h1>Спасибо, мы скоро свяжемся с вами</h1>
-      <p class="lead article-lead">
-        Если вопрос срочный, позвоните нам или напишите в Telegram.
-      </p>
-      <div class="article-actions">
-        <a class="btn primary" href="tel:+79628882450">Позвонить</a>
-        <a class="btn outline" href="https://t.me/moremontessorisochi" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn outline" href="index.html">На главную</a>
-      </div>
-    </main>
+  <body>
+    <div class="success-page">
+      <img src="assets/logo.png" alt="Море Монтессори" width="80" style="margin-bottom:1.5rem;" />
+      <h1>Заявка отправлена!</h1>
+      <p>Мы свяжемся с вами в ближайшее время.</p>
+      <a class="btn primary" href="/">Вернуться на главную</a>
+    </div>
   </body>
 </html>
