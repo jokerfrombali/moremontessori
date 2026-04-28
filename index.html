@@ -64,7 +64,7 @@
   .brand-logo{width:48px;height:48px;border-radius:50%;flex-shrink:0}
   .brand-name{font-family:"Unna",serif;font-weight:700;font-size:20px;line-height:1;color:var(--ink)}
   .brand-sub{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:3px}
-  .nav-links{display:flex;gap:28px;font-size:15px}
+  .nav-links{display:flex;gap:24px;font-size:15px}
   .nav-links a{text-decoration:none;color:var(--ink);transition:color .2s}
   .nav-links a:hover{color:var(--gold-deep)}
   .nav-cta{display:flex;align-items:center;gap:14px}
@@ -100,7 +100,7 @@
   .drift{animation:drift 8s ease-in-out infinite}
 
   /* ─── HERO ─── */
-  .hero{position:relative;padding:80px 0 40px;overflow:hidden;background:linear-gradient(180deg, var(--sky-soft) 0%, var(--cream) 75%)}
+  .hero{position:relative;padding:56px 0 64px;overflow:hidden;background:linear-gradient(180deg, var(--sky-soft) 0%, var(--cream) 75%)}
   .hero .deco-sun{top:60px;right:8%;animation:float 7s ease-in-out infinite}
   .hero .deco-cloud-1{top:48px;left:6%;animation:drift 9s ease-in-out infinite}
   .hero .deco-cloud-2{top:140px;left:32%;animation:drift 11s ease-in-out infinite reverse}
@@ -112,8 +112,8 @@
   .hero .deco-shell{bottom:32px;right:32px;animation:sway 7s ease-in-out infinite}
   .hero .deco-lighthouse{bottom:60px;left:4%;animation:sway 12s ease-in-out infinite}
 
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
-  .hero-copy{transform:translateY(-34px)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero-copy{transform:translateY(-52px)}
   .hero-copy .eyebrow{margin-bottom:20px;display:inline-flex;align-items:center;gap:10px}
   .hero-copy .eyebrow::before{content:"";width:24px;height:1px;background:var(--gold-deep)}
   .hero h1{margin-bottom:24px}
@@ -337,6 +337,30 @@
   .gallery.expanded .extra-tile{display:block}
   .extra-tile{display:none}
 
+  /* ─── life gallery ─── */
+  .life-section{position:relative}
+  .life-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:190px;gap:14px;position:relative;z-index:2}
+  .life-tile{border:1.5px solid var(--ink);border-radius:22px;overflow:hidden;background:var(--cream);position:relative}
+  .life-tile img{width:100%;height:100%;object-fit:cover;display:block}
+  .life-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.48));pointer-events:none}
+  .life-tile span{position:absolute;left:14px;right:14px;bottom:12px;z-index:2;color:#fff;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.55)}
+  .life-tile:nth-child(1){grid-column:span 5;grid-row:span 2}
+  .life-tile:nth-child(2){grid-column:span 4;grid-row:span 2}
+  .life-tile:nth-child(3){grid-column:span 3;grid-row:span 2}
+  .life-tile:nth-child(4),.life-tile:nth-child(5),.life-tile:nth-child(6){grid-column:span 4}
+  .life-tile:nth-child(n+7){grid-column:span 3}
+  .video-strip{margin-top:32px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;z-index:2}
+  .video-card{border:1.5px solid var(--ink);border-radius:18px;overflow:hidden;background:#000;position:relative;aspect-ratio:9/14}
+  .video-card video{width:100%;height:100%;object-fit:cover;display:block}
+  .video-card span{position:absolute;left:12px;bottom:12px;right:12px;color:#fff;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .open-day{margin-top:48px;padding:40px;border:1.5px solid var(--ink);border-radius:28px;background:var(--cream-soft);display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;position:relative;z-index:2;box-shadow:8px 8px 0 var(--gold)}
+  .open-day h3{font-family:"Unna",serif;font-size:34px;line-height:1.1;margin:12px 0;color:var(--ink)}
+  .open-day p{margin:0;color:var(--ink-soft)}
+  .open-day ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  .open-day li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-soft)}
+  .open-day li::before{content:"✦";color:var(--gold-deep);flex-shrink:0}
+  .open-day .btn{align-self:flex-start;margin-top:22px}
+
   /* ─── video tour ─── */
   .video-tour{margin-top:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:stretch;position:relative;z-index:2}
   .video-frame{position:relative;border:1.5px solid var(--ink);border-radius:24px;overflow:hidden;background:#000;aspect-ratio:16/9}
@@ -426,6 +450,9 @@
   .extra p{margin:0;color:var(--ink-soft);font-size:14.5px;flex:1}
   .extra-meta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:0.04em;padding-top:14px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:8px}
   .extra-meta strong{font-family:"Unna",serif;color:var(--ink);font-weight:700;letter-spacing:0;font-size:15px;white-space:nowrap}
+  .extras-note{margin-top:28px;padding:28px;border:1.5px dashed var(--ink);border-radius:20px;background:var(--sky-soft);display:flex;justify-content:space-between;gap:24px;align-items:center;position:relative;z-index:2}
+  .extras-note p{margin:0;color:var(--ink-soft);max-width:720px}
+  .extras-note strong{font-family:"Unna",serif;font-size:24px;color:var(--ink)}
 
   /* ─── reviews ─── */
   .reviews-section{position:relative}
@@ -539,6 +566,12 @@
     .gallery{grid-template-columns:repeat(6,1fr);grid-auto-rows:130px}
     .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8{grid-column:span 3}
     .g1{grid-row:span 2}
+    .life-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:150px}
+    .life-tile:nth-child(n){grid-column:span 3;grid-row:span 1}
+    .life-tile:nth-child(1),.life-tile:nth-child(2){grid-row:span 2}
+    .video-strip{grid-template-columns:repeat(2,1fr)}
+    .open-day{grid-template-columns:1fr;padding:28px 24px}
+    .extras-note{display:block}
     .programs,.seasonal,.contact{padding:40px 28px}
     .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
     .program{border-right:none}
@@ -560,6 +593,9 @@
     .program{border-right:none !important}
     .gallery{grid-template-columns:repeat(2,1fr)}
     .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8{grid-column:span 1;grid-row:span 1}
+    .life-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+    .life-tile:nth-child(n){grid-column:span 1;grid-row:span 1}
+    .video-strip{grid-template-columns:1fr}
     .hero-meta{grid-template-columns:1fr;gap:14px}
     .day-list li{grid-template-columns:90px 1fr 44px;padding:18px 16px}
     h1{font-size:42px}
@@ -582,6 +618,7 @@
     </a>
     <div class="nav-links">
       <a href="#programs">Группы</a>
+      <a href="#programs">Цены</a>
       <a href="#seasonal">Забота</a>
       <a href="#space">Среда</a>
       <a href="#teachers">Педагоги</a>
@@ -603,7 +640,9 @@
   </div>
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <a href="#programs">Группы</a>
+    <a href="#programs">Цены</a>
     <a href="#seasonal">Забота</a>
+    <a href="#photos">Галерея</a>
     <a href="#space">Среда</a>
     <a href="#teachers">Педагоги</a>
     <a href="#documents">Документы</a>
@@ -727,7 +766,7 @@
           <div class="hero-badge">★ Открыт набор на 2026</div>
         </div>
         <div class="hero-stamp">
-          <span><strong>5+ лет</strong>работаем в Сочи<br/><em>лицензия № Л035</em></span>
+          <span><strong>5+ лет</strong>работаем в Сочи<br/><em>по лицензии</em></span>
         </div>
       </div>
     </div>
@@ -842,13 +881,13 @@
         </div>
         <div class="standard-item">
           <div class="standard-num">№ 03</div>
-          <div class="standard-title">Вместимость до 27 детей</div>
-          <div class="standard-meta">малые группы, без перегруза, своя площадка</div>
+          <div class="standard-title">Сильная команда рядом</div>
+          <div class="standard-meta">педагоги, психолог, логопед и специалисты по развитию работают вместе</div>
         </div>
         <div class="standard-item">
           <div class="standard-num">№ 04</div>
-          <div class="standard-title">Видеонаблюдение в группах</div>
-          <div class="standard-meta">доступ родителям по запросу, в любое время дня</div>
+          <div class="standard-title">Индивидуальное внимание</div>
+          <div class="standard-meta">ребёнка знают по имени, темпераменту, привычкам и темпу развития</div>
         </div>
       </div>
     </div>
@@ -940,21 +979,21 @@
     <div class="programs">
       <div class="programs-grid">
         <div class="program">
-          <span class="program-age">2–3 года</span>
-          <h3>Мягкая адаптация</h3>
-          <p>Постепенный вход в группу, без давления и спешки. Первая неделя — короткие визиты с родителем рядом.</p>
+          <span class="program-age">1–3 года</span>
+          <h3>Мама и малыш</h3>
+          <p>Занятия для мягкого старта: ребёнок знакомится со средой рядом с мамой, пробует материалы и первые правила группы.</p>
           <div class="program-price">полдня · с обедом<strong>от 24 000 ₽ / мес</strong></div>
         </div>
         <div class="program">
-          <span class="program-age">2–4 года</span>
-          <h3>Полдня · младшая группа</h3>
-          <p>Развивающие занятия, творчество, прогулки. Первые навыки самостоятельности и общения.</p>
+          <span class="program-age">1,5–3 года</span>
+          <h3>Группа Тоддлер</h3>
+          <p>Первые навыки самостоятельности, речь, движение, практическая жизнь и общение со сверстниками в спокойном ритме.</p>
           <div class="program-price">08:00–13:00 · с обедом<strong>от 32 000 ₽ / мес</strong></div>
         </div>
         <div class="program">
-          <span class="program-age">2–7 лет</span>
-          <h3>Полный день · до 9 часов</h3>
-          <p>Основной формат: развивающая программа, творчество, прогулки, обед, сон, полдник. Гибкое окончание дня.</p>
+          <span class="program-age">3–7 лет</span>
+          <h3>Класс Бамбини</h3>
+          <p>Основная Монтессори-программа: материалы по выбору, творчество, английский, музыка, прогулки, обед, сон и полдник.</p>
           <div class="program-price">08:00–17:00 · 5 дней в неделю<strong>от 42 000 ₽ / мес</strong></div>
         </div>
         <div class="program">
@@ -1190,7 +1229,7 @@
     <div class="video-tour">
       <div class="video-frame">
         <video controls preload="none" poster="assets/photos/05-osnovnoy-klass.jpg" playsinline>
-          <!-- Видеофайл появится здесь: <source src="assets/videos/tour.mp4" type="video/mp4" /> -->
+          <source src="assets/videos/activity-01.mp4" type="video/mp4" />
           Ваш браузер не поддерживает встроенное видео.
         </video>
         <div class="play-hint"><span>Видеотур по саду · 1 мин</span></div>
@@ -1244,6 +1283,43 @@
         <p>Тенистая улица в центре, своя территория, парковка для родителей у входа. До пляжа «Ривьера» — 7 минут пешком, до Морвокзала — 12 минут.</p>
         <a href="https://yandex.com/profile/52197730109?lang=ru" class="btn btn--gold">Открыть на Яндекс.Картах →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━ LIFE GALLERY ━━━━━━━━━━━━━━━━━━━━ -->
+<section id="photos" class="life-section sec-sky">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Фото и видео</div></div>
+      <h2>Настоящие моменты из сада: дети работают, играют и пробуют сами</h2>
+    </div>
+
+    <div class="life-grid">
+      <div class="life-tile"><img src="assets/gallery/kids-01.jpg" alt="Дети строят башню из Монтессори-материалов" loading="lazy" /><span>Монтессори-материалы</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-02.jpg" alt="Девочка работает с розовой башней" loading="lazy" /><span>Концентрация и порядок</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-03.jpg" alt="Ребёнок занимается практической жизнью с педагогом" loading="lazy" /><span>Практическая жизнь</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-04.jpg" alt="Сенсорный зал с подвесным оборудованием" loading="lazy" /><span>Сенсорная интеграция</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-05.jpg" alt="Сенсорное оборудование и подвесные элементы" loading="lazy" /><span>Движение и баланс</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-06.jpg" alt="Ребёнок делает упражнение на балансире" loading="lazy" /><span>Баланс и тело</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-07.jpg" alt="Девочка на балансире в классе" loading="lazy" /><span>Координация</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-08.jpg" alt="Ребёнок на балансировочной доске" loading="lazy" /><span>Уверенность в движении</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-09.jpg" alt="Мальчик занимается с кинетическим песком" loading="lazy" /><span>Сенсорная игра</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-10.jpg" alt="Ребёнок работает с пазлом за столом" loading="lazy" /><span>Мелкая моторика</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-11.jpg" alt="Ребёнок переливает воду через воронку" loading="lazy" /><span>Практический опыт</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-12.jpg" alt="Девочка выполняет задание с мелкими предметами" loading="lazy" /><span>Внимание и точность</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-13.jpg" alt="Мальчик моет руки в миске" loading="lazy" /><span>Самообслуживание</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-14.jpg" alt="Ребёнок строит башню из цветных кубиков" loading="lazy" /><span>Логика и последовательность</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-15.jpg" alt="Ребёнок работает с водой и предметами" loading="lazy" /><span>Опыты с водой</span></div>
+      <div class="life-tile"><img src="assets/gallery/kids-16.jpg" alt="Светлая Монтессори-среда сада" loading="lazy" /><span>Светлая среда</span></div>
+    </div>
+
+    <div class="video-strip" aria-label="Видео занятий и активности">
+      <div class="video-card"><video controls preload="metadata" playsinline><source src="assets/videos/activity-01.mp4" type="video/mp4" /></video><span>Видео занятий</span></div>
+      <div class="video-card"><video controls preload="metadata" playsinline><source src="assets/videos/activity-02.mp4" type="video/mp4" /></video><span>Движение</span></div>
+      <div class="video-card"><video controls preload="metadata" playsinline><source src="assets/videos/activity-03.mp4" type="video/mp4" /></video><span>Практика</span></div>
+      <div class="video-card"><video controls preload="metadata" playsinline><source src="assets/videos/activity-04.mp4" type="video/mp4" /></video><span>Среда</span></div>
+      <div class="video-card"><video controls preload="metadata" playsinline><source src="assets/videos/activity-05.mp4" type="video/mp4" /></video><span>Занятия</span></div>
     </div>
   </div>
 </section>
@@ -1309,7 +1385,7 @@
         <h2 style="margin-top:16px">Ритм, который помогает <em>чувствовать себя спокойно</em></h2>
         <p class="lead" style="margin-top:24px">Один и тот же порядок каждый день. Дети знают, что будет дальше — и это снимает половину тревоги. Мы не ломаем ритм даже летом: гости из других городов вписываются в общий день.</p>
         <div style="margin-top:24px;font-family:'Caveat',cursive;font-size:24px;color:var(--ink-soft);transform:rotate(-2deg);display:inline-block">
-          ← можно листать справа →
+          Сад работает до 18:00, дополнительные занятия — по отдельному расписанию
         </div>
       </div>
       <ul class="day-list">
@@ -1383,40 +1459,62 @@
       </div>
       <div class="extra">
         <div class="extra-glyph">❋</div>
-        <h4>Логопед и нейропсихолог</h4>
-        <p>Индивидуальные занятия по запросу — диагностика, постановка звуков, мягкая коррекция.</p>
+        <h4>Нейропсихологическая диагностика</h4>
+        <p>Определяем сильные стороны, зоны внимания и понятный маршрут поддержки ребёнка.</p>
         <div class="extra-meta"><span>по записи</span><strong>от 2 200 ₽</strong></div>
       </div>
       <div class="extra">
-        <div class="extra-glyph">★</div>
-        <h4>Продлёнка до 19:30</h4>
-        <p>Для родителей с поздним графиком. Ужин, спокойные занятия, чтение перед сном.</p>
-        <div class="extra-meta"><span>пн–пт</span><strong>+8 000 ₽ / мес</strong></div>
+        <div class="extra-glyph">Л</div>
+        <h4>Дефектолог, логопед</h4>
+        <p>Речь, понимание инструкции, запуск коммуникации, коррекция звуков и подготовка к школе.</p>
+        <div class="extra-meta"><span>индивидуально</span><strong>по записи</strong></div>
       </div>
       <div class="extra">
         <div class="extra-glyph">☼</div>
-        <h4>Летний городской лагерь</h4>
-        <p>Июнь–август. Море, мастерские, прогулки в дендрарий и Ривьеру. Принимаем не воспитанников.</p>
-        <div class="extra-meta"><span>смена 1 неделя</span><strong>от 18 500 ₽</strong></div>
+        <h4>АФК, ЛФК, массаж</h4>
+        <p>Мягкая работа с телом, осанкой, координацией, тонусом и двигательными привычками.</p>
+        <div class="extra-meta"><span>курсами</span><strong>по записи</strong></div>
+      </div>
+      <div class="extra">
+        <div class="extra-glyph">SI</div>
+        <h4>Сенсорная интеграция</h4>
+        <p>Занятия для развития ощущений тела, баланса, внимания и саморегуляции через движение.</p>
+        <div class="extra-meta"><span>будни/сб</span><strong>по записи</strong></div>
+      </div>
+      <div class="extra">
+        <div class="extra-glyph">M</div>
+        <h4>Монтессори-терапия</h4>
+        <p>Индивидуальная работа в подготовленной среде для нормотипичных, одарённых и особенных детей.</p>
+        <div class="extra-meta"><span>индивидуально</span><strong>по записи</strong></div>
+      </div>
+      <div class="extra">
+        <div class="extra-glyph">ART</div>
+        <h4>Арт-терапия</h4>
+        <p>Творческие занятия для эмоций, уверенности, контакта и бережного самовыражения.</p>
+        <div class="extra-meta"><span>мини-группы</span><strong>по записи</strong></div>
       </div>
       <div class="extra">
         <div class="extra-glyph">☆</div>
-        <h4>Дни рождения в саду</h4>
-        <p>В выходные — праздник в наших классах: своя площадка, домашний торт, ведущий.</p>
-        <div class="extra-meta"><span>3 часа · до 15 детей</span><strong>от 22 000 ₽</strong></div>
+        <h4>Мастер-классы</h4>
+        <p>Для детей и родителей: творчество, практическая жизнь, семейные встречи и тематические занятия.</p>
+        <div class="extra-meta"><span>по афише</span><strong>открытая запись</strong></div>
       </div>
       <div class="extra">
         <div class="extra-glyph">✎</div>
-        <h4>Консультации для родителей</h4>
-        <p>Один на один с педагогом или психологом — про адаптацию, границы, конфликты, скрининг.</p>
-        <div class="extra-meta"><span>60 минут</span><strong>3 500 ₽</strong></div>
+        <h4>Родительские встречи</h4>
+        <p>Семинары и тренинги про развитие, границы, адаптацию, гаджеты и самостоятельность ребёнка.</p>
+        <div class="extra-meta"><span>ежемесячно</span><strong>по записи</strong></div>
       </div>
       <div class="extra">
         <div class="extra-glyph">⌂</div>
         <h4>Гостевая забота</h4>
-        <p>Для туристов — на день, неделю или месяц. Без вступительного взноса, без оформления.</p>
+        <p>Для туристов — на день, неделю или месяц. Без вступительного взноса, с включением в обычный день сада.</p>
         <div class="extra-meta"><span>май–сентябрь</span><strong>от 2 200 ₽</strong></div>
       </div>
+    </div>
+    <div class="extras-note">
+      <p><strong>Сад до 18:00, затем дополнительные занятия.</strong><br/>Доп. занятия проходят в будни с 18:00 до 20:00 и по субботам с 10:00 до 17:00. Работаем с одарёнными, нормотипичными и особенными детьми.</p>
+      <a href="#contacts" class="btn btn--gold">Записаться на занятие →</a>
     </div>
   </div>
 </section>
@@ -1531,13 +1629,32 @@
             </div>
           </a>
           <a href="#" class="news-card">
-            <div class="news-date">заметка</div>
+            <div class="news-date">каждый<small>последний чт</small></div>
             <div>
-              <h4>Как проходит первая неделя в садике</h4>
-              <p>Начинаем мягко: короткие визиты, знакомый взрослый рядом и постепенное увеличение времени.</p>
+              <h4>Дни открытых дверей для родителей</h4>
+              <p>В 18:15 разбираем систему раннего развития с 0 до 6 лет и показываем, чем заменить гаджеты живым опытом.</p>
             </div>
           </a>
         </div>
+      </div>
+    </div>
+
+    <div class="open-day">
+      <div>
+        <div class="eyebrow">Дни открытых дверей</div>
+        <h3>Система раннего развития с 0 до 6 лет</h3>
+        <p>Многих мам тревожит мир, в который дети попадают с рождения: гаджеты и экраны, агрессия сверстников, детские блогеры, которым малыши доверяют. На встрече говорим, как стать для ребёнка главным ориентиром и заложить здоровую психику.</p>
+        <a href="#contacts" class="btn btn--gold">Записаться на экскурсию →</a>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Когда:</strong> каждый последний четверг месяца в 18:15.</li>
+          <li>Чем занять ребёнка вместо мультиков и гаджетов.</li>
+          <li>Как практический опыт развивает мозг ребёнка от 0 до 6 лет.</li>
+          <li>Как развивать межполушарное взаимодействие через бытовые дела.</li>
+          <li>Секреты логопедов и нейропсихологов для ежедневной жизни.</li>
+          <li>Почему ребёнок делает “назло” и не слышит слово “нет”.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1613,11 +1730,12 @@
         </div>
       </div>
 
-      <form class="form" onsubmit="event.preventDefault();this.querySelector('.form-success').style.display='block';this.querySelector('.form-fields').style.display='none';">
+      <form class="form" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
         <h3>Записаться на знакомство</h3>
         <div class="form-sub">Перезвоним в течение дня и предложим удобное время визита.</div>
         <div class="form-fields">
-          <div class="honeypot"><input type="text" name="company" tabindex="-1" autocomplete="off" /></div>
+          <input type="hidden" name="form-name" value="lead" />
+          <div class="honeypot"><label>Не заполняйте это поле <input type="text" name="bot-field" tabindex="-1" autocomplete="off" /></label></div>
           <label class="field">
             <span class="field-label">Имя родителя</span>
             <input type="text" name="name" placeholder="Как к вам обращаться" required />
@@ -1652,10 +1770,6 @@
           </label>
           <button type="submit" class="form-submit">Отправить заявку</button>
           <div class="form-meta">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных. Мы не передаём данные третьим лицам и не делаем рассылок.</div>
-        </div>
-        <div class="form-success" style="display:none;text-align:center;padding:32px 16px">
-          <div style="font-family:'Unna',serif;font-size:28px;font-weight:700;margin-bottom:10px">Спасибо!</div>
-          <p style="color:var(--ink-soft);margin:0">Мы получили заявку и перезвоним сегодня. Если удобнее в Telegram — <a href="https://t.me/moremontessorisochi" style="color:var(--gold-deep)">напишите нам</a>.</p>
         </div>
       </form>
     </div>
