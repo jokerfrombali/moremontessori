@@ -1745,7 +1745,7 @@
         <div class="vk-note">В VK регулярно публикуем новости сада, фото занятий, анонсы встреч и живые заметки для родителей.</div>
       </div>
 
-      <form class="form" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+      <form class="form" name="lead" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitLead(event,this)">
         <h3>Записаться на знакомство</h3>
         <div class="form-sub">Перезвоним в течение дня и предложим удобное время визита.</div>
         <div class="form-fields">
@@ -1916,6 +1916,20 @@
     });
   })();
 </script>
-
+<script>
+function submitLead(e, form) {
+  e.preventDefault();
+  var data = {};
+  new FormData(form).forEach(function(v, k){ data[k] = v; });
+  form.querySelector('.form-submit').disabled = true;
+  fetch('/.netlify/functions/send-lead', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  }).catch(function(){});
+  form.querySelector('.form-fields').style.display = 'none';
+  form.querySelector('.form-success').style.display = 'block';
+}
+</script>
 </body>
 </html>
