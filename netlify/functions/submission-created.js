@@ -11,10 +11,10 @@ exports.handler = async function (event) {
   const formLabel = form_name === "contact-news" ? "со статьи" : "с главной";
 
   const text =
-    `📋 Заявка #${number} (${formLabel})\n\n` +
-    `👤 Имя: ${name}\n` +
-    `📞 Телефон: ${phone}\n` +
-    `🧒 Возраст ребёнка: ${age}`;
+    "📋 Новая заявка (" + formLabel + ")!\n\n" +
+    "👤 Имя: " + name + "\n" +
+    "📞 Телефон: " + phone + "\n" +
+    "👶 Возраст ребёнка: " + age;
 
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -25,7 +25,7 @@ exports.handler = async function (event) {
     const req = https.request(
       {
         hostname: "api.telegram.org",
-        path: `/bot${token}/sendMessage`,
+        path: "/bot" + token + "/sendMessage",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
