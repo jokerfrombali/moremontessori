@@ -100,9 +100,9 @@
   .drift{animation:drift 8s ease-in-out infinite}
 
   /* ─── HERO ─── */
-  .hero{position:relative;padding:56px 0 64px;overflow:hidden;background:linear-gradient(180deg, var(--sky-soft) 0%, var(--cream) 75%)}
+  .hero{position:relative;padding:42px 0 54px;overflow:hidden;background:linear-gradient(180deg, var(--sky-soft) 0%, var(--cream) 75%)}
   .hero .deco-sun{top:60px;right:8%;animation:float 7s ease-in-out infinite}
-  .hero .deco-cloud-1{top:48px;left:6%;animation:drift 9s ease-in-out infinite}
+  .hero .deco-cloud-1{top:24px;left:6%;animation:drift 9s ease-in-out infinite}
   .hero .deco-cloud-2{top:140px;left:32%;animation:drift 11s ease-in-out infinite reverse}
   .hero .deco-bird{top:90px;left:55%;animation:float 4s ease-in-out infinite}
   .hero .deco-bird-2{top:60px;left:68%;animation:float 5.5s ease-in-out infinite reverse}
@@ -183,30 +183,6 @@
   @media (max-width:980px){.pillars{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:640px){.pillars{grid-template-columns:1fr}}
 
-  /* ─── Стандарт ─── */
-  .standards{margin-top:80px;padding:48px;border:1.5px solid var(--ink);border-radius:32px;background:var(--cream-soft);position:relative;z-index:2}
-  .standards-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:36px;padding-bottom:24px;border-bottom:1px dashed var(--line);flex-wrap:wrap}
-  .standards-head h3{font-size:32px;line-height:1.1;flex:1;min-width:240px}
-  .standards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .standard-item{padding:0 28px;border-right:1px dashed var(--line);display:flex;flex-direction:column;gap:10px}
-  .standard-item:first-child{padding-left:0}
-  .standard-item:last-child{border-right:none;padding-right:0}
-  .standard-num{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-deep)}
-  .standard-title{font-family:"Unna",serif;font-size:22px;line-height:1.2;color:var(--ink)}
-  .standard-meta{font-size:13px;color:var(--muted);line-height:1.5}
-  @media (max-width:980px){
-    .standards{padding:32px 24px}
-    .standards-grid{grid-template-columns:repeat(2,1fr);gap:24px 0}
-    .standard-item{padding:0 16px}
-    .standard-item:nth-child(2){border-right:none;padding-right:0}
-    .standard-item:nth-child(3){padding-left:0;border-top:1px dashed var(--line);padding-top:24px}
-    .standard-item:nth-child(4){border-top:1px dashed var(--line);padding-top:24px}
-  }
-  @media (max-width:640px){
-    .standards-grid{grid-template-columns:1fr}
-    .standard-item{padding:16px 0;border-right:none;border-top:1px dashed var(--line)}
-    .standard-item:first-child{border-top:none;padding-top:0}
-  }
   .pillar-num{font-family:"Caveat",cursive;font-size:64px;line-height:1;color:var(--ink);position:absolute;top:18px;right:24px;opacity:.6}
 
   /* ─── Документы и оплата ─── */
@@ -342,6 +318,7 @@
   .life-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:190px;gap:14px;position:relative;z-index:2}
   .life-tile{border:1.5px solid var(--ink);border-radius:22px;overflow:hidden;background:var(--cream);position:relative}
   .life-tile img{width:100%;height:100%;object-fit:cover;display:block}
+  .life-tile img.focus-face{object-position:center 16%}
   .life-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.48));pointer-events:none}
   .life-tile span{position:absolute;left:14px;right:14px;bottom:12px;z-index:2;color:#fff;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.55)}
   .life-tile:nth-child(1){grid-column:span 5;grid-row:span 2}
@@ -458,21 +435,30 @@
   .reviews-section{position:relative}
   .reviews-section .deco-heart{top:60px;right:7%;animation:float 5s ease-in-out infinite}
   .reviews-section .deco-birds-flock{top:56px;left:5%;animation:drift 10s ease-in-out infinite}
-  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:2}
-  .review{padding:32px 28px;background:var(--cream);border:1.5px solid var(--ink);border-radius:24px;position:relative}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;position:relative;z-index:2}
+  .review{padding:32px 28px;background:var(--cream);border:1.5px solid var(--ink);border-radius:24px;position:relative;display:flex;flex-direction:column}
   .review:nth-child(1){background:var(--gold-soft)}
   .review:nth-child(2){background:var(--moss-soft)}
   .review:nth-child(3){background:var(--rose-soft)}
   .review-quote{font-family:"Unna",serif;font-size:18px;line-height:1.5;color:var(--ink);margin:0 0 24px}
   .review-quote::before{content:"«";font-family:"Unna",serif;font-size:64px;color:var(--ink);line-height:0;display:block;height:32px;opacity:.4}
-  .review-author{display:flex;align-items:center;gap:12px;border-top:1.5px solid var(--ink);padding-top:18px}
+  .review-author{display:flex;align-items:center;gap:12px;border-top:1.5px solid var(--ink);padding-top:18px;margin-top:auto;min-height:66px}
   .review-avatar{width:44px;height:44px;border-radius:50%;background:var(--cream);border:1.5px solid var(--ink);display:grid;place-items:center;font-family:"Unna",serif;font-weight:700;color:var(--ink-soft)}
   .review-name{font-weight:600;font-size:15px}
   .review-meta{font-size:13px;color:var(--muted);font-family:"IBM Plex Mono",monospace}
+  .ratings{margin-top:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;position:relative;z-index:2}
+  .rating-card{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 24px;border:1.5px solid var(--ink);border-radius:18px;background:var(--cream);color:var(--ink);text-decoration:none}
+  .rating-card strong{font-family:"Unna",serif;font-size:30px;line-height:1;color:var(--ink)}
+  .rating-card span{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .rating-card small{display:block;margin-top:6px;color:var(--muted);font-size:13px}
+  .rating-card--accent{background:var(--gold-soft);box-shadow:5px 5px 0 var(--gold)}
 
   /* ─── schedule + news ─── */
   .schedule-section .deco-kite{top:50px;right:6%;animation:float 6s ease-in-out infinite}
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;position:relative;z-index:2}
+  .schedule-section .two-col{grid-template-columns:.82fr 1.18fr}
+  .schedule-section .two-col > div:first-child{order:2}
+  .schedule-section .two-col > div:last-child{order:1}
   .schedule-table{background:var(--cream);border:1.5px solid var(--ink);border-radius:24px;padding:32px}
   .schedule-table dl{margin:0}
   .schedule-table .row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px dashed var(--line);font-size:15px}
@@ -483,8 +469,9 @@
   .schedule-note{padding:20px;background:var(--gold);border:1.5px solid var(--ink);border-radius:14px;font-size:14px;margin-top:20px;color:var(--ink)}
   .schedule-note strong{display:block;font-family:"Unna",serif;font-size:17px;margin-bottom:4px}
 
-  .news-list{display:grid;gap:16px}
-  .news-card{padding:24px;background:var(--cream);border:1.5px solid var(--ink);border-radius:18px;display:grid;grid-template-columns:96px 1fr;gap:20px;text-decoration:none;color:inherit;transition:transform .2s}
+  .news-list{display:grid;gap:18px}
+  .news-card{padding:28px;background:var(--cream);border:1.5px solid var(--ink);border-radius:18px;display:grid;grid-template-columns:96px 1fr;gap:20px;text-decoration:none;color:inherit;transition:transform .2s}
+  .schedule-section .news-card{box-shadow:5px 5px 0 rgba(232,194,107,.55)}
   .news-card:hover{transform:translateY(-2px)}
   .news-card:nth-child(1){background:var(--sky-soft)}
   .news-card:nth-child(2){background:var(--moss-soft)}
@@ -509,9 +496,13 @@
   .contact-row-value{font-family:"Unna",serif;font-weight:700;font-size:19px;flex:1;line-height:1.3}
   .contact-row-value a{text-decoration:none}
   .contact-row-value small{display:block;font-family:"IBM Plex Sans",sans-serif;font-size:14px;font-weight:400;color:var(--muted);margin-top:4px}
+  .map-inline{display:inline-flex;align-items:center;margin-top:12px;padding:9px 14px;border:1.5px solid var(--ink);border-radius:999px;background:var(--gold);font-family:"IBM Plex Sans",sans-serif;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none}
   .socials{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
   .social{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;color:var(--ink);font-size:14px;font-weight:500;transition:all .2s;background:var(--cream-soft)}
   .social:hover{background:var(--ink);color:var(--cream)}
+  .social-vk{background:#2787f5;color:#fff;border-color:#145ca8;box-shadow:4px 4px 0 var(--gold)}
+  .social-vk:hover{background:#145ca8;color:#fff}
+  .vk-note{margin-top:12px;max-width:430px;font-size:14px;line-height:1.45;color:var(--ink-soft)}
 
   .form{background:var(--gold-soft);border:1.5px solid var(--ink);border-radius:24px;padding:32px;position:relative}
   .form h3{margin-bottom:6px}
@@ -561,8 +552,8 @@
     .mobile-menu{display:block}
     .hero-copy{transform:none}
     .container{padding:0 20px}
-    .hero-grid,.seasonal,.contact,.day,.two-col,.space-features{grid-template-columns:1fr;gap:32px}
-    .pillars,.programs-grid,.teachers,.extras,.reviews{grid-template-columns:1fr 1fr}
+    .hero-grid,.seasonal,.contact,.day,.two-col,.space-features,.schedule-section .two-col{grid-template-columns:1fr;gap:32px}
+    .pillars,.programs-grid,.teachers,.extras,.reviews,.ratings{grid-template-columns:1fr 1fr}
     .gallery{grid-template-columns:repeat(6,1fr);grid-auto-rows:130px}
     .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8{grid-column:span 3}
     .g1{grid-row:span 2}
@@ -589,7 +580,7 @@
     .nav-cta{gap:8px}
     .mobile-phone,.mobile-menu-toggle{width:42px;height:42px}
     .mobile-menu{left:14px;right:14px}
-    .pillars,.programs-grid,.teachers,.extras,.reviews,.field-row{grid-template-columns:1fr}
+    .pillars,.programs-grid,.teachers,.extras,.reviews,.ratings,.field-row{grid-template-columns:1fr}
     .program{border-right:none !important}
     .gallery{grid-template-columns:repeat(2,1fr)}
     .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8{grid-column:span 1;grid-row:span 1}
@@ -601,6 +592,30 @@
     h1{font-size:42px}
     .footer-grid{grid-template-columns:1fr}
     .programs,.seasonal,.contact{padding:28px 20px}
+    .contact-row{display:block}
+    .contact-row-label{margin-bottom:8px}
+    .review-author{min-height:auto}
+  }
+  @media (max-width: 430px){
+    .container{padding:0 16px}
+    .nav-inner{padding:8px 12px}
+    .hero{padding:34px 0 50px}
+    .hero-grid{gap:26px}
+    .hero-copy{padding-top:4px}
+    .hero h1{font-size:clamp(38px, 12vw, 48px);line-height:.95}
+    .hero-lead{font-size:18px;line-height:1.45;margin-bottom:24px}
+    .hero-ctas{gap:10px;margin-bottom:30px}
+    .hero-ctas .btn{width:100%;justify-content:center}
+    .hero-photo{border-radius:18px}
+    .hero-stamp{width:118px;height:118px;right:-12px;bottom:-18px;font-size:13px}
+    .hero-meta dd{font-size:21px}
+    section{padding:56px 0}
+    h2{font-size:clamp(34px, 10vw, 44px)}
+    .programs,.seasonal,.contact,.open-day{border-radius:22px;padding:24px 16px}
+    .life-grid{gap:10px;grid-auto-rows:132px}
+    .news-card{grid-template-columns:1fr;padding:22px}
+    .contact-row-value{font-size:18px}
+    .footer-bottom{display:grid;gap:10px;text-align:left}
   }
 </style>
 </head>
@@ -617,12 +632,11 @@
       </div>
     </a>
     <div class="nav-links">
-      <a href="#programs">Группы</a>
       <a href="#programs">Цены</a>
       <a href="#seasonal">Забота</a>
-      <a href="#space">Среда</a>
+      <a href="#space">Помещение</a>
       <a href="#teachers">Педагоги</a>
-      <a href="#documents">Документы</a>
+      <a href="#photos">Фото</a>
       <a href="#contacts">Контакты</a>
     </div>
     <div class="nav-cta">
@@ -639,13 +653,11 @@
     </div>
   </div>
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <a href="#programs">Группы</a>
     <a href="#programs">Цены</a>
     <a href="#seasonal">Забота</a>
-    <a href="#photos">Галерея</a>
-    <a href="#space">Среда</a>
+    <a href="#space">Помещение</a>
     <a href="#teachers">Педагоги</a>
-    <a href="#documents">Документы</a>
+    <a href="#photos">Фото</a>
     <a href="#schedule">График</a>
     <a href="#contacts">Контакты</a>
     <a href="tel:+79628882450">+7 962 888-24-50</a>
@@ -746,8 +758,8 @@
         </div>
         <dl class="hero-meta">
           <div>
-            <dt>Полный день</dt>
-            <dd>до 9 часов<small>гибкий формат, полдня тоже можно</small></dd>
+            <dt>График</dt>
+            <dd>08:00–18:00<small>сад работает по будням</small></dd>
           </div>
           <div>
             <dt>Возраст</dt>
@@ -865,33 +877,6 @@
       </div>
     </div>
 
-    <!-- Стандарт сада: лицензия / опыт / вместимость / видеонаблюдение -->
-    <div class="standards">
-      <div class="standards-head"><div class="eyebrow">Стандарт сада</div><h3>Что есть у нас «по умолчанию»</h3></div>
-      <div class="standards-grid">
-        <div class="standard-item">
-          <div class="standard-num">№ 01</div>
-          <div class="standard-title">Лицензия на образовательную деятельность</div>
-          <div class="standard-meta">официальный документ, готовы показать на встрече</div>
-        </div>
-        <div class="standard-item">
-          <div class="standard-num">№ 02</div>
-          <div class="standard-title">Более 5 лет работы в Сочи</div>
-          <div class="standard-meta">с 2019 года, 120+ семей с нами за это время</div>
-        </div>
-        <div class="standard-item">
-          <div class="standard-num">№ 03</div>
-          <div class="standard-title">Сильная команда рядом</div>
-          <div class="standard-meta">педагоги, психолог, логопед и специалисты по развитию работают вместе</div>
-        </div>
-        <div class="standard-item">
-          <div class="standard-num">№ 04</div>
-          <div class="standard-title">Индивидуальное внимание</div>
-          <div class="standard-meta">ребёнка знают по имени, темпераменту, привычкам и темпу развития</div>
-        </div>
-      </div>
-    </div>
-
     <!-- Документы и оплата -->
     <div class="docs-pay" id="documents">
       <!-- Лицензия -->
@@ -972,7 +957,7 @@
 
   <div class="container">
     <div class="section-head">
-      <div><div class="eyebrow">Группы и занятия</div></div>
+      <div><div class="eyebrow">Цены и занятия</div></div>
       <h2>Программы для малышей, дошкольников и родителей</h2>
     </div>
 
@@ -980,39 +965,39 @@
       <div class="programs-grid">
         <div class="program">
           <span class="program-age">1–3 года</span>
-          <h3>Мама и малыш</h3>
-          <p>Занятия для мягкого старта: ребёнок знакомится со средой рядом с мамой, пробует материалы и первые правила группы.</p>
-          <div class="program-price">полдня · с обедом<strong>от 24 000 ₽ / мес</strong></div>
+          <h3>Группа «Мама+малыш»</h3>
+          <p>Для самых маленьких: с уверенной ходьбы до 3 лет. Занятия проходят вместе с мамой по вторникам и четвергам с 18:00 до 19:15.</p>
+          <div class="program-price">разовое занятие<strong>800 ₽</strong></div>
         </div>
         <div class="program">
           <span class="program-age">1,5–3 года</span>
-          <h3>Группа Тоддлер</h3>
-          <p>Первые навыки самостоятельности, речь, движение, практическая жизнь и общение со сверстниками в спокойном ритме.</p>
-          <div class="program-price">08:00–13:00 · с обедом<strong>от 32 000 ₽ / мес</strong></div>
+          <h3>Тариф «Полдня»</h3>
+          <p>Посещение группы Монтессори с 08:00 до 12:00: свободная работа, круг, материалы, общение и мягкая адаптация.</p>
+          <div class="program-price">08:00–12:00 · группа Монтессори<strong>35 000 ₽ / мес</strong></div>
         </div>
         <div class="program">
-          <span class="program-age">3–7 лет</span>
-          <h3>Класс Бамбини</h3>
-          <p>Основная Монтессори-программа: материалы по выбору, творчество, английский, музыка, прогулки, обед, сон и полдник.</p>
-          <div class="program-price">08:00–17:00 · 5 дней в неделю<strong>от 42 000 ₽ / мес</strong></div>
+          <span class="program-age">1,5–3 и 3–6 лет</span>
+          <h3>Тариф «Полный день»</h3>
+          <p>Монтессори детский сад для детей 1,5–3 и 3–6 лет с 08:00 до 18:00: занятия, прогулка, питание, сон и спокойный вечер.</p>
+          <div class="program-price">08:00–18:00 · 5 дней в неделю<strong>48 000 ₽ / мес</strong></div>
         </div>
         <div class="program">
           <span class="program-age">5–7 лет</span>
           <h3>Подготовка к школе</h3>
           <p>Чтение, счёт, логика. Индивидуальный план под каждого ребёнка с учётом темпа и интересов.</p>
-          <div class="program-price">2 раза в неделю<strong>от 7 200 ₽ / мес</strong></div>
+          <div class="program-price">2 раза в неделю<strong>7 200 ₽ / мес</strong></div>
         </div>
         <div class="program">
           <span class="program-age">3+</span>
           <h3>Английский и музыка</h3>
           <p>Доп. занятия для воспитанников и приходящих детей. Игровой формат, ритм, голос, движение.</p>
-          <div class="program-price">от 1 раза в неделю<strong>от 4 500 ₽ / мес</strong></div>
+          <div class="program-price">1 раз в неделю<strong>4 500 ₽ / мес</strong></div>
         </div>
         <div class="program">
           <span class="program-age">2–7 лет</span>
           <h3>Пробный день</h3>
           <p>Возможность попробовать сад без обязательств: 3–5 часов, обед, знакомство с группой и педагогом.</p>
-          <div class="program-price">3–5 часов · с обедом<strong>от 2 500 ₽ разово</strong></div>
+          <div class="program-price">3–5 часов · с обедом<strong>2 500 ₽ разово</strong></div>
         </div>
       </div>
     </div>
@@ -1057,7 +1042,7 @@
         <div class="price-row"><span>Утро (08:00–13:00, с обедом)</span><span>2 200 ₽</span></div>
         <div class="price-row"><span>Полный день (08:00–18:00)</span><span>3 500 ₽</span></div>
         <div class="price-row"><span>Неделя (5 дней подряд)</span><span>14 800 ₽</span></div>
-        <div class="price-row"><span>Месяц гостевого формата</span><span>от 48 000 ₽</span></div>
+        <div class="price-row"><span>Месяц гостевого формата</span><span>48 000 ₽</span></div>
         <div class="price-row"><span>Разовый час занятия (англ./муз.)</span><span>1 200 ₽</span></div>
         <p class="seasonal-note">Цены ориентировочные. Точная стоимость зависит от возраста ребёнка и количества дней. Подтверждаем при бронировании.</p>
       </div>
@@ -1274,13 +1259,13 @@
           <span class="feat-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#1A1A1A" stroke-width="1.5"><path d="M2 12 Q 5 8 9 12 T 16 12"/><path d="M2 8 Q 5 4 9 8 T 16 8" opacity=".5"/></svg>
           </span>
-          <span>7 минут до моря — гуляем туда в хорошую погоду</span>
+          <span>До пляжа «Ривьера» обычно 15–20 минут пешком — гуляем к морю по погоде</span>
         </li>
       </ul>
       <div class="address-card">
         <div class="eyebrow">Адрес и логистика</div>
         <div class="address-card-title">Сочи, Пластунская ул., 123А, корп. 3</div>
-        <p>Тенистая улица в центре, своя территория, парковка для родителей у входа. До пляжа «Ривьера» — 7 минут пешком, до Морвокзала — 12 минут.</p>
+        <p>Тенистая улица в центре, своя территория, парковка для родителей у входа. До пляжа «Ривьера» обычно 15–20 минут пешком, до Морвокзала — около 20 минут.</p>
         <a href="https://yandex.com/profile/52197730109?lang=ru" class="btn btn--gold">Открыть на Яндекс.Картах →</a>
       </div>
     </div>
@@ -1300,9 +1285,8 @@
       <div class="life-tile"><img src="assets/gallery/kids-02.jpg" alt="Девочка работает с розовой башней" loading="lazy" /><span>Концентрация и порядок</span></div>
       <div class="life-tile"><img src="assets/gallery/kids-03.jpg" alt="Ребёнок занимается практической жизнью с педагогом" loading="lazy" /><span>Практическая жизнь</span></div>
       <div class="life-tile"><img src="assets/gallery/kids-04.jpg" alt="Сенсорный зал с подвесным оборудованием" loading="lazy" /><span>Сенсорная интеграция</span></div>
-      <div class="life-tile"><img src="assets/gallery/kids-05.jpg" alt="Сенсорное оборудование и подвесные элементы" loading="lazy" /><span>Движение и баланс</span></div>
-      <div class="life-tile"><img src="assets/gallery/kids-06.jpg" alt="Ребёнок делает упражнение на балансире" loading="lazy" /><span>Баланс и тело</span></div>
-      <div class="life-tile"><img src="assets/gallery/kids-07.jpg" alt="Девочка на балансире в классе" loading="lazy" /><span>Координация</span></div>
+      <div class="life-tile"><img class="focus-face" src="assets/gallery/kids-06.jpg" alt="Ребёнок делает упражнение на балансире" loading="lazy" /><span>Баланс и тело</span></div>
+      <div class="life-tile"><img class="focus-face" src="assets/gallery/kids-07.jpg" alt="Девочка на балансире в классе" loading="lazy" /><span>Координация</span></div>
       <div class="life-tile"><img src="assets/gallery/kids-08.jpg" alt="Ребёнок на балансировочной доске" loading="lazy" /><span>Уверенность в движении</span></div>
       <div class="life-tile"><img src="assets/gallery/kids-09.jpg" alt="Мальчик занимается с кинетическим песком" loading="lazy" /><span>Сенсорная игра</span></div>
       <div class="life-tile"><img src="assets/gallery/kids-10.jpg" alt="Ребёнок работает с пазлом за столом" loading="lazy" /><span>Мелкая моторика</span></div>
@@ -1351,7 +1335,7 @@
       <figure class="teacher-card"><img src="assets/team/05-smirnova.jpg" alt="Смирнова Наталья Евгеньевна — художник, арт-терапевт, преподаватель" loading="lazy" /></figure>
     </div>
     <div class="teachers-foot">
-      <p><strong>6 специалистов на 27 детей.</strong> Не просто воспитатели: психолог, нейропсихолог, логопед-дефектолог, арт-терапевт, специалист БАК и педагог по подготовке к школе. Каждый ребёнок получает индивидуальное внимание.</p>
+      <p><strong>С детьми работают опытные педагоги и профильные специалисты.</strong> В команде есть психолог, нейропсихолог, логопед-дефектолог, арт-терапевт и педагог по подготовке к школе. Для отдельных задач приглашаем сильных специалистов, чтобы ребёнок получал точную поддержку.</p>
       <a href="#contacts" class="btn btn--primary">Познакомиться с командой <span class="arr">→</span></a>
     </div>
   </div>
@@ -1443,25 +1427,25 @@
         <div class="extra-glyph">EN</div>
         <h4>Английский с носителем</h4>
         <p>Игровой формат, погружение в язык через бытовые ситуации. Группы 3–5 и 5–7 лет.</p>
-        <div class="extra-meta"><span>2× в неделю</span><strong>от 6 000 ₽</strong></div>
+        <div class="extra-meta"><span>2× в неделю</span><strong>6 000 ₽</strong></div>
       </div>
       <div class="extra">
         <div class="extra-glyph">♪</div>
         <h4>Музыкальные занятия</h4>
         <p>Ритм, слух, голос. Орф-инструменты, движение, простые ансамбли.</p>
-        <div class="extra-meta"><span>1× в неделю</span><strong>от 4 500 ₽</strong></div>
+        <div class="extra-meta"><span>1× в неделю</span><strong>4 500 ₽</strong></div>
       </div>
       <div class="extra">
         <div class="extra-glyph">A</div>
         <h4>Подготовка к школе</h4>
         <p>Чтение, счёт, логика. Индивидуальный план под каждого ребёнка 5–7 лет.</p>
-        <div class="extra-meta"><span>2× в неделю</span><strong>от 7 200 ₽</strong></div>
+        <div class="extra-meta"><span>2× в неделю</span><strong>7 200 ₽</strong></div>
       </div>
       <div class="extra">
         <div class="extra-glyph">❋</div>
         <h4>Нейропсихологическая диагностика</h4>
         <p>Определяем сильные стороны, зоны внимания и понятный маршрут поддержки ребёнка.</p>
-        <div class="extra-meta"><span>по записи</span><strong>от 2 200 ₽</strong></div>
+        <div class="extra-meta"><span>по записи</span><strong>2 200 ₽</strong></div>
       </div>
       <div class="extra">
         <div class="extra-glyph">Л</div>
@@ -1509,7 +1493,7 @@
         <div class="extra-glyph">⌂</div>
         <h4>Гостевая забота</h4>
         <p>Для туристов — на день, неделю или месяц. Без вступительного взноса, с включением в обычный день сада.</p>
-        <div class="extra-meta"><span>май–сентябрь</span><strong>от 2 200 ₽</strong></div>
+        <div class="extra-meta"><span>май–сентябрь</span><strong>2 200 ₽</strong></div>
       </div>
     </div>
     <div class="extras-note">
@@ -1573,6 +1557,16 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="ratings" aria-label="Отзывы на картах">
+      <a href="https://2gis.ru/sochi/geo/70000001044681844" class="rating-card rating-card--accent" target="_blank" rel="noopener">
+        <div><span>2ГИС</span><small>27 оценок, актуальные отзывы родителей</small></div>
+        <strong>4,6</strong>
+      </a>
+      <a href="https://yandex.ru/profile/52197730109?lang=ru" class="rating-card" target="_blank" rel="noopener">
+        <div><span>Яндекс.Карты</span><small>оценка и отзывы в карточке сада</small></div>
+        <strong>Отзывы</strong>
+      </a>
     </div>
   </div>
 </section>
@@ -1715,8 +1709,12 @@
           <div class="contact-row-value"><a href="tel:+79628882450">+7 (962) 888-24-50</a><small>пн–пт 08:00–18:00</small></div>
         </div>
         <div class="contact-row">
+          <div class="contact-row-label">Режим</div>
+          <div class="contact-row-value">Пн–пт 08:00–18:00<small>доп. занятия: будни 18:00–20:00, суббота 10:00–17:00</small></div>
+        </div>
+        <div class="contact-row">
           <div class="contact-row-label">Адрес</div>
-          <div class="contact-row-value">Сочи, Пластунская ул., 123А, корп. 3<small>центр, 7 минут пешком до моря</small></div>
+          <div class="contact-row-value">Сочи, Пластунская ул., 123А, корп. 3<small>центр Сочи, рядом парк «Ривьера»</small><a class="map-inline" href="https://yandex.com/profile/52197730109?lang=ru" target="_blank" rel="noopener">Показать на карте →</a></div>
         </div>
         <div class="contact-row">
           <div class="contact-row-label">Почта</div>
@@ -1725,9 +1723,10 @@
 
         <div class="socials">
           <a href="https://t.me/moremontessorisochi" class="social">Telegram</a>
-          <a href="https://vk.ru/cadmontessori" class="social">VK</a>
+          <a href="https://vk.ru/cadmontessori" class="social social-vk">VK · группа сада</a>
           <a href="https://www.instagram.com/moremontessori_sochi" class="social">Instagram</a>
         </div>
+        <div class="vk-note">В VK регулярно публикуем новости сада, фото занятий, анонсы встреч и живые заметки для родителей.</div>
       </div>
 
       <form class="form" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
@@ -1793,7 +1792,7 @@
       <div class="footer-col">
         <h5>Сад</h5>
         <ul>
-          <li><a href="#programs">Группы</a></li>
+          <li><a href="#programs">Цены и программы</a></li>
           <li><a href="#extras">Доп. услуги</a></li>
           <li><a href="#seasonal">Забота летом</a></li>
           <li><a href="#teachers">Педагоги</a></li>
