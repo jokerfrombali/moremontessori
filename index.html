@@ -448,7 +448,12 @@
   .review-meta{font-size:13px;color:var(--muted);font-family:"IBM Plex Mono",monospace}
   .ratings{margin-top:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;position:relative;z-index:2}
   .rating-card{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 24px;border:1.5px solid var(--ink);border-radius:18px;background:var(--cream);color:var(--ink);text-decoration:none}
-  .rating-card strong{font-family:"Unna",serif;font-size:30px;line-height:1;color:var(--ink)}
+  .rating-score{display:grid;gap:8px;justify-items:end;min-width:126px}
+  .rating-score strong{font-family:"Unna",serif;font-size:30px;line-height:1;color:var(--ink)}
+  .stars{position:relative;display:inline-block;font-size:24px;line-height:1;letter-spacing:2px;color:rgba(26,26,26,.18)}
+  .stars::before{content:"★★★★★"}
+  .stars::after{content:"★★★★★";position:absolute;inset:0;width:var(--rating);overflow:hidden;color:#E8C26B;text-shadow:0 1px 0 var(--ink)}
+  .rating-fill{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
   .rating-card span{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .rating-card small{display:block;margin-top:6px;color:var(--muted);font-size:13px}
   .rating-card--accent{background:var(--gold-soft);box-shadow:5px 5px 0 var(--gold)}
@@ -500,8 +505,12 @@
   .socials{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
   .social{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;color:var(--ink);font-size:14px;font-weight:500;transition:all .2s;background:var(--cream-soft)}
   .social:hover{background:var(--ink);color:var(--cream)}
+  .social-tg{background:#27a7e7;color:#fff;border-color:#147fb4;box-shadow:4px 4px 0 rgba(39,167,231,.25)}
+  .social-tg:hover{background:#147fb4;color:#fff}
   .social-vk{background:#2787f5;color:#fff;border-color:#145ca8;box-shadow:4px 4px 0 var(--gold)}
   .social-vk:hover{background:#145ca8;color:#fff}
+  .social-ig{color:#fff;border-color:#8a2387;background:linear-gradient(135deg,#feda75 0%,#fa7e1e 28%,#d62976 56%,#962fbf 78%,#4f5bd5 100%);box-shadow:4px 4px 0 rgba(214,41,118,.24)}
+  .social-ig:hover{color:#fff;background:linear-gradient(135deg,#fa7e1e 0%,#d62976 48%,#4f5bd5 100%)}
   .vk-note{margin-top:12px;max-width:430px;font-size:14px;line-height:1.45;color:var(--ink-soft)}
 
   .form{background:var(--gold-soft);border:1.5px solid var(--ink);border-radius:24px;padding:32px;position:relative}
@@ -899,7 +908,6 @@
             <div><strong>Понятные условия для родителей</strong>Договор, чеки и документы для оплаты материнским капиталом подготовим без лишней бюрократии</div>
           </li>
         </ul>
-        <a href="#contacts" class="doc-cta">Запросить копию лицензии <span>→</span></a>
       </div>
 
       <!-- Материнский капитал -->
@@ -1528,7 +1536,7 @@
     </div>
     <div class="reviews">
       <div class="review">
-        <p class="review-quote">Дочка пошла к Анне в 1,8. Я ждала истерик, как у подружек в обычных садах — а она через две недели сама звала «к Ане в группу». Это многое говорит о том, как там устроена адаптация.</p>
+        <p class="review-quote">Дочке быстро стало спокойно в садике. Уже через пару недель она сама собиралась утром и радовалась, что идет к детям и Анне.</p>
         <div class="review-author">
           <div class="review-avatar">К</div>
           <div>
@@ -1548,7 +1556,7 @@
         </div>
       </div>
       <div class="review">
-        <p class="review-quote">Что зацепило — короткий вечерний отчёт. Не «сегодня было всё прекрасно», а конкретно: что ел, во что играл, с кем поссорился и как помирились. Чувствуется, что детей реально видят.</p>
+        <p class="review-quote">Ребёнок стал увереннее: дома рассказывает, что строил, с кем играл и что получилось самому. Видно, что в саду ему интересно и спокойно.</p>
         <div class="review-author">
           <div class="review-avatar">О</div>
           <div>
@@ -1561,11 +1569,19 @@
     <div class="ratings" aria-label="Отзывы на картах">
       <a href="https://2gis.ru/sochi/geo/70000001044681844" class="rating-card rating-card--accent" target="_blank" rel="noopener">
         <div><span>2ГИС</span><small>27 оценок, актуальные отзывы родителей</small></div>
-        <strong>4,6</strong>
+        <div class="rating-score">
+          <strong>4,6</strong>
+          <div class="stars" style="--rating:92%" aria-label="4,6 из 5"></div>
+          <div class="rating-fill">92% заполнения</div>
+        </div>
       </a>
       <a href="https://yandex.ru/profile/52197730109?lang=ru" class="rating-card" target="_blank" rel="noopener">
         <div><span>Яндекс.Карты</span><small>оценка и отзывы в карточке сада</small></div>
-        <strong>Отзывы</strong>
+        <div class="rating-score">
+          <strong>4,7</strong>
+          <div class="stars" style="--rating:94%" aria-label="4,7 из 5"></div>
+          <div class="rating-fill">94% заполнения</div>
+        </div>
       </a>
     </div>
   </div>
@@ -1606,7 +1622,7 @@
 
       <div>
         <div class="eyebrow">Новости и заметки</div>
-        <h2 style="margin-top:16px;margin-bottom:24px">Жизнь сада — без потока «у нас всё прекрасно»</h2>
+        <h2 style="margin-top:16px;margin-bottom:24px">Новости, встречи и события сада</h2>
         <div class="news-list">
           <a href="#" class="news-card">
             <div class="news-date">30 апр<small>11:00</small></div>
@@ -1722,9 +1738,9 @@
         </div>
 
         <div class="socials">
-          <a href="https://t.me/moremontessorisochi" class="social">Telegram</a>
+          <a href="https://t.me/moremontessorisochi" class="social social-tg">Telegram</a>
           <a href="https://vk.ru/cadmontessori" class="social social-vk">VK · группа сада</a>
-          <a href="https://www.instagram.com/moremontessori_sochi" class="social">Instagram</a>
+          <a href="https://www.instagram.com/moremontessori_sochi" class="social social-ig">Instagram</a>
         </div>
         <div class="vk-note">В VK регулярно публикуем новости сада, фото занятий, анонсы встреч и живые заметки для родителей.</div>
       </div>
