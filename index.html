@@ -1933,6 +1933,12 @@ function submitLead(e, form) {
   form.querySelector('.form-submit').disabled = true;
   form.querySelector('.form-fields').style.display = 'none';
   form.querySelector('.form-success').style.display = 'block';
+  setTimeout(function() {
+    form.reset();
+    form.querySelector('.form-submit').disabled = false;
+    form.querySelector('.form-fields').style.display = '';
+    form.querySelector('.form-success').style.display = 'none';
+  }, 10000);
   var BOT = 'https://api.telegram.org/bot8798616075:AAGC0pDhRKdQkpXNVZjBMFvWVv33ZWOrCyE';
   var CHAT = '239624439';
   function buildText(num) {
