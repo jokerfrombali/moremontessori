@@ -1941,31 +1941,22 @@ function submitLead(e, form) {
     form.querySelector('.form-fields').style.display = '';
     form.querySelector('.form-success').style.display = 'none';
   }, 10000);
-  var BOT = 'https://api.telegram.org/bot8798616075:AAGC0pDhRKdQkpXNVZjBMFvWVv33ZWOrCyE';
-  var CHAT = '-1003500738124';
-  var THREAD = 2;
-  function buildText(num) {
-    var t = (num ? '📋 Заявка #' + num : '📋 Новая заявка') + ' (с главной)\n\n';
-    t += '👤 Имя: ' + name + '\n📞 Телефон: ' + phone + '\n👶 Возраст: ' + age;
-    if (format) t += '\n📚 Формат: ' + format;
-    if (note) t += '\n💬 Комментарий: ' + note;
-    return t;
-  }
-  fetch(BOT + '/sendMessage', {
+  // Заявка уходит на наш сервер, а он уже пересылает её в Telegram.
+  // Токен бота живёт только на сервере и в исходники страницы не попадает.
+  fetch('/send-lead.php', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({chat_id: CHAT, message_thread_id: THREAD, text: buildText(null)})
+    body: JSON.stringify({
+      name: name,
+      phone: phone,
+      age: age,
+      format: format,
+      note: note,
+      source: 'с главной',
+      company: data.company || ''
+    })
   })
   .then(function(r) { return r.json(); })
-  .then(function(res) {
-    if (!res.ok) return;
-    var msgId = res.result.message_id;
-    fetch(BOT + '/editMessageText', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({chat_id: CHAT, message_id: msgId, text: buildText(msgId)})
-    });
-  })
   .catch(function(){});
 }
 </script>

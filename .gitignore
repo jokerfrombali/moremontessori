@@ -1,2 +1,10 @@
-# Local Netlify folder
+# Локальная конфигурация с токенами — на сервере лежит выше public_html
+config.php
+
+# Журнал заявок и служебные файлы
+leads.log
+lead-locks/
+
+# Служебное
+.DS_Store
 .netlify
