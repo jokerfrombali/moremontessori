@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /success.html
+Disallow: /send-lead.php
+Disallow: /config.sample.php
+Disallow: /uploads/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid
+
+Sitemap: https://moremontessori.ru/sitemap.xml
