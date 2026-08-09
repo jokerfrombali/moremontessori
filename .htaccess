@@ -2,23 +2,21 @@
 #  moremontessori.ru — конфигурация Apache на хостинге Beget
 # ---------------------------------------------------------------------------
 
-# Не показывать содержимое директорий
 Options -Indexes
 
-# Закрыть служебные файлы от посторонних
 <FilesMatch "^(config\.php|config\.sample\.php|\.gitignore|\.htaccess|.*\.log|.*\.md)$">
     Require all denied
 </FilesMatch>
 
-# Закрыть служебные каталоги
 RedirectMatch 404 /\.git
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Редирект на HTTPS здесь НЕ делаем — его включает тумблер
-    # "Редирект с HTTP на HTTPS" в настройках сайта Beget, после выпуска
-    # SSL-сертификата. Два редиректа сразу дают петлю.
+    # Проверку Let's Encrypt не трогаем никогда
+    RewriteRule ^\.well-known/ - [L]
+
+    # Редирект на HTTPS включает тумблер в панели Beget, не здесь
 
     # Без www (не трогаем технические адреса *.beget.tech)
     RewriteCond %{HTTP_HOST} !\.beget\.tech$ [NC]
@@ -26,23 +24,20 @@ RedirectMatch 404 /\.git
     RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 </IfModule>
 
-# Сжатие текстовых ресурсов
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
         application/javascript application/json image/svg+xml
 </IfModule>
 
-# Кэш браузера для статики
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType text/css              "access plus 7 days"
+    ExpiresByType text/css               "access plus 7 days"
     ExpiresByType application/javascript "access plus 7 days"
-    ExpiresByType image/jpeg            "access plus 30 days"
-    ExpiresByType image/png             "access plus 30 days"
-    ExpiresByType image/svg+xml         "access plus 30 days"
-    ExpiresByType video/mp4             "access plus 30 days"
-    ExpiresByType text/html             "access plus 0 seconds"
+    ExpiresByType image/jpeg             "access plus 30 days"
+    ExpiresByType image/png              "access plus 30 days"
+    ExpiresByType image/svg+xml          "access plus 30 days"
+    ExpiresByType video/mp4              "access plus 30 days"
+    ExpiresByType text/html              "access plus 0 seconds"
 </IfModule>
 
-# Правильная кодировка
 AddDefaultCharset UTF-8
