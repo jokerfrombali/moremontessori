@@ -1787,6 +1787,10 @@
             <span class="field-label">Комментарий</span>
             <textarea name="note" rows="2" placeholder="Удобное время для звонка, особенности ребёнка"></textarea>
           </label>
+          <label class="form-consent">
+            <input type="checkbox" name="consent" required />
+            <span>Я соглашаюсь на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a></span>
+          </label>
           <button type="submit" class="form-submit">Отправить заявку</button>
           <div class="form-meta">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных. Мы не передаём данные третьим лицам и не делаем рассылок.</div>
         </div>
@@ -1843,7 +1847,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Море Монтессори · ИП Мордвова И.С. · Лицензия на образовательную деятельность</span>
+      <span>© 2026 Море Монтессори · ИП Мордвова И.С. · <a href="privacy.html">Политика конфиденциальности</a></span>
       <span>Сочи · Пластунская, 123А, корп. 3</span>
     </div>
   </div>
@@ -1972,7 +1976,7 @@ function submitLead(e, form) {
 
 <!-- Уведомление о файлах cookie -->
 <div class="cookie-note" id="cookieNote" role="dialog" aria-live="polite" aria-label="Файлы cookie" hidden>
-  <p class="cookie-note__text">Продолжая использовать наш сайт, Вы соглашаетесь на обработку файлов cookie. Данные обрабатываются для предоставления наших услуг и улучшения качества работы нашего веб-сайта и сервисов.</p>
+  <p class="cookie-note__text">Продолжая использовать наш сайт, Вы соглашаетесь на обработку файлов cookie. Данные обрабатываются для предоставления наших услуг и улучшения качества работы нашего веб-сайта и сервисов. <a href="privacy.html">Подробнее</a>.</p>
   <button type="button" class="cookie-note__btn" id="cookieAccept">Понятно</button>
 </div>
 
@@ -1997,6 +2001,12 @@ function submitLead(e, form) {
 }
 .cookie-note__btn:hover{background:var(--ink-soft); transform:translateY(-1px);}
 .cookie-note__btn:focus-visible{outline:2px solid var(--gold-deep); outline-offset:3px;}
+.form-consent{
+  display:flex; align-items:flex-start; gap:10px; margin:4px 0 14px;
+  font-size:13px; line-height:1.5; color:var(--muted); cursor:pointer;
+}
+.form-consent input{margin-top:2px; width:16px; height:16px; accent-color:var(--sea-deep); flex:0 0 auto; cursor:pointer;}
+.form-consent a{color:var(--sea-deep);}
 @media (max-width:640px){
   .cookie-note{flex-direction:column; align-items:stretch; text-align:left; padding:16px 18px;}
   .cookie-note__btn{width:100%;}
