@@ -1970,5 +1970,55 @@ function submitLead(e, form) {
 }
 </script>
 
+<!-- Уведомление о файлах cookie -->
+<div class="cookie-note" id="cookieNote" role="dialog" aria-live="polite" aria-label="Файлы cookie" hidden>
+  <p class="cookie-note__text">Продолжая использовать наш сайт, Вы соглашаетесь на обработку файлов cookie. Данные обрабатываются для предоставления наших услуг и улучшения качества работы нашего веб-сайта и сервисов.</p>
+  <button type="button" class="cookie-note__btn" id="cookieAccept">Понятно</button>
+</div>
+
+<style>
+.cookie-note{
+  position:fixed; left:16px; right:16px; bottom:16px; z-index:9999;
+  display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+  max-width:1080px; margin:0 auto; padding:18px 22px;
+  background:var(--cream-soft); border:1px solid var(--line); border-radius:18px;
+  box-shadow:0 12px 32px rgba(26,26,26,.14);
+}
+.cookie-note[hidden]{display:none;}
+.cookie-note__text{
+  flex:1 1 320px; margin:0; color:var(--ink-soft);
+  font-size:14px; line-height:1.55;
+}
+.cookie-note__btn{
+  flex:0 0 auto; padding:12px 30px; border:0; border-radius:999px; cursor:pointer;
+  background:var(--ink); color:var(--cream);
+  font:inherit; font-size:14px; font-weight:600; letter-spacing:.01em;
+  transition:background .2s ease, transform .2s ease;
+}
+.cookie-note__btn:hover{background:var(--ink-soft); transform:translateY(-1px);}
+.cookie-note__btn:focus-visible{outline:2px solid var(--gold-deep); outline-offset:3px;}
+@media (max-width:640px){
+  .cookie-note{flex-direction:column; align-items:stretch; text-align:left; padding:16px 18px;}
+  .cookie-note__btn{width:100%;}
+}
+</style>
+
+<script>
+(function(){
+  var KEY = 'mm_cookie_ok';
+  var box = document.getElementById('cookieNote');
+  var btn = document.getElementById('cookieAccept');
+  if (!box || !btn) return;
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch(e) {}
+  if (saved === '1') return;
+  box.hidden = false;
+  btn.addEventListener('click', function(){
+    box.hidden = true;
+    try { localStorage.setItem(KEY, '1'); } catch(e) {}
+  });
+})();
+</script>
+
 </body>
 </html>
