@@ -708,3 +708,6 @@
   .nav-cta .phone{display:none}
   .nav-cta .btn--gold{padding:10px 16px;font-size:14px}
 }
+
+/* телефон в шапке не переносим */
+.nav-cta .phone{white-space:nowrap}
