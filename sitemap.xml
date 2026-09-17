@@ -43,6 +43,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://moremontessori.ru/blog/osobennye/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moremontessori.ru/blog/osobennye/sdvg-u-detey/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://moremontessori.ru/blog/povedenie/</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -59,6 +71,12 @@
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moremontessori.ru/blog/rech/artikulyacionnaya-gimnastika/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moremontessori.ru/blog/rech/zapusk-rechi/</loc>
@@ -79,6 +97,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://moremontessori.ru/blog/sad/kak-vybrat-chastnyy-sad/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://moremontessori.ru/blog/shkola/</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -86,6 +110,18 @@
   </url>
   <url>
     <loc>https://moremontessori.ru/blog/shkola/gotovnost-k-shkole/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moremontessori.ru/blog/telo/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moremontessori.ru/blog/telo/melkaya-motorika/</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
