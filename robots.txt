@@ -4,6 +4,6 @@ Disallow: /success.html
 Disallow: /send-lead.php
 Disallow: /config.sample.php
 Disallow: /uploads/
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid&etext&_openstat&from&ysclid
 
 Sitemap: https://moremontessori.ru/sitemap.xml
